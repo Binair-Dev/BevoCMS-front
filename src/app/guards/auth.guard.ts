@@ -1,13 +1,13 @@
 import { inject } from '@angular/core';
-import { CanActivateFn } from '@angular/router';
-import { StateStoreService } from '../shared/state-store.service';
+import { CanActivateFn, Router } from '@angular/router';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  let ss = inject(StateStoreService)
+  let router = inject(Router)
+
   if(localStorage.getItem('token')) {
     return true;
   } else {
-    alert('Tu dois être connecté pour accéder a cette page !')
+    router.navigateByUrl('/login')
     return false;
   }
 };
