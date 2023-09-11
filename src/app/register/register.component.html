@@ -7,53 +7,82 @@
     <app-header></app-header>
     <main class="red">
       <section>
-        <div class="container-login">
+        <form [formGroup]="registerForm" class="container-login">
           <div class="login">
             <div class="info-login">
               <h1>Inscription</h1>
               <p>Envie de nous rejoindre jeune samourai ?</p>
+              <ng-container *ngIf="successMessage.length > 1">
+                <span class="form-success">{{successMessage}}</span>
+              </ng-container>
+              <ng-container *ngIf="errorMessage.length > 1">
+                <span *ngFor="let error of errorMessage" class="form-danger">{{error}}</span>
+              </ng-container>
+              <ng-container *ngIf="registerForm.controls['username'].errors && registerForm.controls['username'].touched">
+                <span class="form-danger" *ngIf="registerForm.controls['username'].errors['minlength']">Le nom d'utilisateur doit contenir au moins {{registerForm.controls['username'].errors['minlength']['requiredLength']}} caractères !</span>
+                <span class="form-danger" *ngIf="registerForm.controls['username'].errors['maxlength']">Le nom d'utilisateur doit contenir au maximum {{registerForm.controls['username'].errors['maxlength']['requiredLength']}} caractères !</span>
+              </ng-container>
               <input
                 class="style-imput"
                 type="text"
                 placeholder="Pseudo"
                 name="uname"
                 required
+                formControlName="username"
               />
+              <ng-container *ngIf="registerForm.controls['email'].errors && registerForm.controls['email'].touched">
+                <span class="form-danger" *ngIf="registerForm.controls['email'].errors['email']">Le format de votre adresse email n'est pas bon !</span>
+                <span class="form-danger" *ngIf="registerForm.controls['email'].errors['required']">L'email est requis !</span>
+              </ng-container>
               <input
               class="style-imput"
               type="email"
               placeholder="Adresse mail"
               name="email"
               required
+              formControlName="email"
             />
+              <ng-container *ngIf="registerForm.controls['password'].errors && registerForm.controls['password'].touched">
+                <span class="form-danger" *ngIf="registerForm.controls['password'].errors['minlength']">Le mot de passe doit contenir au moins {{registerForm.controls['password'].errors['minlength']['requiredLength']}} caractères !</span>
+                <span class="form-danger" *ngIf="registerForm.controls['password'].errors['maxlength']">Le mot de passe doit contenir au maximum {{registerForm.controls['password'].errors['maxlength']['requiredLength']}} caractères !</span>
+              </ng-container>
               <input
                 class="style-imput"
                 type="password"
                 placeholder="Mot de passe"
                 name="psw"
                 required
+                formControlName="password"
               />
+              <ng-container *ngIf="registerForm.controls['confirmPassword'].errors && registerForm.controls['confirmPassword'].touched">
+                <span class="form-danger" *ngIf="registerForm.controls['confirmPassword'].errors['minlength']">La confirmation du mot de passe doit contenir au moins {{registerForm.controls['confirmPassword'].errors['minlength']['requiredLength']}} caractères !</span>
+                <span class="form-danger" *ngIf="registerForm.controls['confirmPassword'].errors['maxlength']">La confirmation du mot de passe doit contenir au maximum {{registerForm.controls['confirmPassword'].errors['maxlength']['requiredLength']}} caractères !</span>
+              </ng-container>
+              <ng-container *ngIf="registerForm.errors && registerForm.errors['passwordVerify'] && registerForm.controls['password'].touched">
+                <span class="form-danger">{{registerForm.errors['passwordVerify']}}</span>
+              </ng-container>
               <input
               class="style-imput"
               type="password"
               placeholder="Confirmation Mot de passe"
               name="psw"
               required
+              formControlName="confirmPassword"
             />
             </div>
             <div class="common-checkbox">
-                <input type="checkbox" name="cgu" id="cgu">
+                <input type="checkbox" name="cgu" id="cgu" formControlName="cguCgvChecked">
                 <label for="cgu" class="small-text">
                 <strong>J'accepte les CGU-CGV</strong>
                 </label>
                 <span></span>
                 </div>
             <div class="connexion-btn">
-              <button class="custom-button" type="submit">Connexion</button>
+              <button class="custom-button" type="submit" (click)="register()">Connexion</button>
               <a href="#"><p>Déja inscrit ?</p></a>
             </div>
           </div>
-        </div>
+        </form>
       </section>
     </main>
     <app-footer></app-footer>

@@ -7,33 +7,49 @@
     <app-header></app-header>
     <main class="red">
       <section>
-        <div class="container-login">
+        <form class="container-login" [formGroup]="loginForm">
           <div class="login">
             <div class="info-login">
               <h1>Connexion</h1>
               <p>Vous revoilà enfin !</p>
+              <ng-container *ngIf="successMessage.length > 1">
+                <span class="form-success">{{successMessage}}</span>
+              </ng-container>
+              <ng-container *ngIf="errorMessage.length > 1">
+                <span class="form-danger">{{errorMessage}}</span>
+              </ng-container>
+              <ng-container *ngIf="loginForm.controls['username'].errors && loginForm.controls['username'].touched">
+                <span class="form-danger" *ngIf="loginForm.controls['username'].errors['minlength']">Le nom d'utilisateur doit contenir au moins {{loginForm.controls['username'].errors['minlength']['requiredLength']}} caractères !</span>
+                <span class="form-danger" *ngIf="loginForm.controls['username'].errors['maxlength']">Le nom d'utilisateur doit contenir au maximum {{loginForm.controls['username'].errors['maxlength']['requiredLength']}} caractères !</span>
+              </ng-container>
               <input
                 class="style-imput"
                 type="text"
                 placeholder="Pseudonyme"
                 name="uname"
                 required
+                formControlName="username"
               />
+              <ng-container *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched">
+                <span class="form-danger" *ngIf="loginForm.controls['password'].errors['minlength']">Le mot de passe doit contenir au moins {{loginForm.controls['password'].errors['minlength']['requiredLength']}} caractères !</span>
+                <span class="form-danger" *ngIf="loginForm.controls['password'].errors['maxlength']">Le mot de passe doit contenir au maximum {{loginForm.controls['password'].errors['maxlength']['requiredLength']}} caractères !</span>
+              </ng-container>
               <input
                 class="style-imput"
                 type="password"
                 placeholder="Enter Password"
                 name="psw"
                 required
+                formControlName="password"
               />
             </div>
             <div class="connexion-btn">
-              <button class="custom-button" type="submit">Login</button>
+              <button class="custom-button" type="submit" (click)="login()">Login</button>
               <a href="#"><p>Mot de passe oublié ?</p></a>
               <a href="#"><p>Pas encore de compte ?</p></a>
             </div>
           </div>
-        </div>
+        </form>
       </section>
     </main>
     <app-footer></app-footer>

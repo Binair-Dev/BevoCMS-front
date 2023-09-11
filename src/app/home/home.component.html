@@ -31,43 +31,19 @@
             <p class="p-black">Découvrez toute l'actualité de Utopia.</p>
           </div>
           <div class="cards-article">
-            <div class="cards1-articles">
+            <div class="cards1-articles" *ngFor="let news of newsList">
               <div class="position-cercle">
                 <div class="demi-cercle">
-                  <p class="khand-24">#1</p>
+                  <p class="khand-24">{{news.id}}</p>
                 </div>
-                <img src="/assets/img/hero-3.jpg" height="225" alt="" loading="lazy" />
+                <img src="{{news.image}}" height="225" alt="" loading="lazy" />
               </div>
               <div class="desc-cards">
-                <p class="khand-24">Utopia | Path note</p>
-                <p class="version khand-24">V1</p>
-                <p class="khand-24">V1.2 - 16/05/2022</p>
-              </div>
-            </div>
-            <div class="cards1-articles">
-              <div class="position-cercle">
-                <div class="demi-cercle">
-                  <p class="khand-24">#1</p>
-                </div>
-                <img src="/assets/img/hero-3.jpg" height="225" alt="" loading="lazy" />
-              </div>
-              <div class="desc-cards">
-                <p class="khand-24">Utopia | Path note</p>
-                <p class="version khand-24">V1</p>
-                <p class="khand-24">V1.2 - 16/05/2022</p>
-              </div>
-            </div>
-            <div class="cards1-articles">
-              <div class="position-cercle">
-                <div class="demi-cercle">
-                  <p class="khand-24">#1</p>
-                </div>
-                <img src="/assets/img/hero-3.jpg" height="225" alt="" loading="lazy" />
-              </div>
-              <div class="desc-cards">
-                <p class="khand-24">Utopia | Path note</p>
-                <p class="version khand-24">V1</p>
-                <p class="khand-24">V1.2 - 16/05/2022</p>
+                <p class="khand-24">{{news.title}}</p>
+                <p class="version khand-24"></p>
+                <p class="khand-24">{{news.date | date: 'dd/MM/yyyy'}}</p>
+                <p class="version khand-24"></p>
+                <p class="khand-24">{{news.userName}}</p>
               </div>
             </div>
           </div>

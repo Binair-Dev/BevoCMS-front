@@ -13,21 +13,26 @@ import { LoginComponent } from './login/login.component';
 import { PlayerShopHistoryComponent } from './profile/player-shop-history/player-shop-history.component';
 import { ShopItemComponent } from './shop/shop-item/shop-item.component';
 import { CreditComponent } from './credit/credit.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'play', component: PlayComponent },
-  { path: 'vote', component: VoteComponent },
-  { path: 'shop', component: ShopComponent },
+  { path: 'vote', component: VoteComponent, canActivate: [authGuard] },
+  { path: 'shop', component: ShopComponent, canActivate: [authGuard] },
   { path: 'cgv', component: CgvComponent },
   { path: 'cgu', component: CguComponent },
   { path: 'mentions', component: MentionsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'shop-player-history', component: PlayerShopHistoryComponent },
-  { path: 'shop-item', component: ShopItemComponent },
-  { path: 'credit', component: CreditComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+  {
+    path: 'shop-player-history',
+    component: PlayerShopHistoryComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'shop-item', component: ShopItemComponent, canActivate: [authGuard] },
+  { path: 'credit', component: CreditComponent, canActivate: [authGuard] },
 ];
 
 @NgModule({

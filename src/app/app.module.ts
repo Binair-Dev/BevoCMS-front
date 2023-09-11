@@ -19,6 +19,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { PlayerShopHistoryComponent } from './profile/player-shop-history/player-shop-history.component';
 import { CreditComponent } from './credit/credit.component';
 import { ShopItemComponent } from './shop/shop-item/shop-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ShopItemComponent } from './shop/shop-item/shop-item.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
