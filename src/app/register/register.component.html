@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <!-- Mettre le code langue du site dans l'attribut lang -->
+
+  <app-head></app-head>
+  <body>
+    <app-header></app-header>
+    <main class="red">
+      <section>
+        <div class="container-login">
+          <div class="login">
+            <div class="info-login">
+              <h1>Inscription</h1>
+              <p>Envie de nous rejoindre jeune samourai ?</p>
+              <input
+                class="style-imput"
+                type="text"
+                placeholder="Pseudo"
+                name="uname"
+                required
+              />
+              <input
+              class="style-imput"
+              type="email"
+              placeholder="Adresse mail"
+              name="email"
+              required
+            />
+              <input
+                class="style-imput"
+                type="password"
+                placeholder="Mot de passe"
+                name="psw"
+                required
+              />
+              <input
+              class="style-imput"
+              type="password"
+              placeholder="Confirmation Mot de passe"
+              name="psw"
+              required
+            />
+            </div>
+            <div class="common-checkbox">
+                <input type="checkbox" name="cgu" id="cgu">
+                <label for="cgu" class="small-text">
+                <strong>J'accepte les CGU-CGV</strong>
+                </label>
+                <span></span>
+                </div>
+            <div class="connexion-btn">
+              <button class="custom-button" type="submit">Connexion</button>
+              <a href="#"><p>Déja inscrit ?</p></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <app-footer></app-footer>
+  </body>
+</html>
