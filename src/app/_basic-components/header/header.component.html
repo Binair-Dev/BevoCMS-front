@@ -3,11 +3,11 @@
         <div class="navbar-top">
           <div class="connecte">
             <img src="/assets/img/svg/connecte.svg" height="16" width="16" alt="" />
-            <p>500 connectés</p>
+            <p>{{stats.connected_players}} connectés</p>
           </div>
           <div class="connexion">
-            <ng-container *ngIf="isConnect" >
-              <a class="connecte" (click)="logout()"
+            <ng-container>
+              <a *ngIf="isConnect" class="connecte" (click)="logout()"
               ><img src="/assets/img/svg/Deconnexion.svg" height="20" width="20"/>Déconnexion</a>
             </ng-container>
             <a *ngIf="!isConnect" class="connecte" routerLink="/login"

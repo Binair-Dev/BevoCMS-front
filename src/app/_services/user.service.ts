@@ -4,16 +4,12 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class NewsService {
+export class UserService {
   BASE_URL: string = 'http://localhost:8080';
 
   constructor(private _httpClient: HttpClient) {}
 
-  getNews() {
-    return this._httpClient.get(this.BASE_URL + '/news/list/3');
-  }
-
-  getNew(id: number | string) {
-    return this._httpClient.get(this.BASE_URL + '/news/' + id);
+  getUser(id: number | string) {
+    return this._httpClient.get(this.BASE_URL + '/users/' + id);
   }
 }

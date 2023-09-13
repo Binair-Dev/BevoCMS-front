@@ -32,167 +32,23 @@
                 </div>
                 <h2 class="">Le top 10 des meilleurs voteurs</h2>
                 <div class="voteur">
-                <div class="top-voteur">
+                <div class="top-voteur" *ngFor="let vote of voteList; let i = index">
                   <div class="perso-vote">
                     <div class="persos-vote">
                     <div class="cercle-vote">
                       <img src="" height="" width="" alt="" loading="lazy"/>
                     </div>
                     <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
+                      <p>#{{i + 1}}</p>
+                      <p>{{vote.user_name}}</p>
                     </div>
                     </div>
                   <div class="position-end">
-                    <p>150 votes</p>
+                    <p>{{vote.vote_amount}} votes</p>
                   </div>
                   </div>
                 </div>
-                <div class="top-voteur">
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>150 votes</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="top-voteur">
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>150 votes</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="top-voteur">
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>150 votes</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="top-voteur">
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>150 votes</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="top-voteur">
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>150 votes</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="top-voteur">
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>150 votes</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="top-voteur">
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>150 votes</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="top-voteur">
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>150 votes</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="top-voteur">
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>#1</p>
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>150 votes</p>
-                  </div>
-                  </div>
-                </div>
-                </div>
+              </div>
         </div>
       </section>
     </main>

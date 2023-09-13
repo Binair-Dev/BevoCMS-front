@@ -20,7 +20,11 @@ import { PlayerShopHistoryComponent } from './profile/player-shop-history/player
 import { CreditComponent } from './credit/credit.component';
 import { ShopItemComponent } from './shop/shop-item/shop-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { WikiComponent } from './wiki/wiki.component';
+import { JwtInterceptor } from './shared/jwt.interceptor';
+import { NewsComponent } from './home/news/news.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -40,15 +44,22 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     PlayerShopHistoryComponent,
     CreditComponent,
-    ShopItemComponent
+    ShopItemComponent,
+    WikiComponent,
+    NewsComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

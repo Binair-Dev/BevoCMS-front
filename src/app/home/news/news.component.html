@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <!-- Mettre le code langue du site dans l'attribut lang -->
+
+  <app-head></app-head>
+  <body>
+    <app-header></app-header>
+    <section id="cgv">
+        <div class="center">
+            <img src="{{newsItem.image}}"loading="lazy" />
+        </div>
+        <br>
+        <h2>{{newsItem.title}}</h2>
+        <br>
+        <p>
+          {{newsItem.description}}
+        </p>
+        <br>
+        <hr>
+        <h4 style="text-align: end;">{{newsItem.userName}} - {{newsItem.date | date: "dd/MM/yyyy"}}</h4>
+    </section>
+    <app-footer></app-footer>
+    </body>
+    </html>

@@ -45,7 +45,7 @@ export class LoginComponent {
     });
   }
 
-  login() {
+  async login() {
     if (this.loginForm.valid) {
       let log = new Login();
       log.username = this.loginForm.value['username'];
@@ -53,12 +53,16 @@ export class LoginComponent {
       this.authService.login(log).subscribe(
         (data) => {
           localStorage.setItem('token', (data as TokenResponse).token);
+          this.errorMessage = ''
           this.successMessage = 'Authentification réussie!';
           setTimeout(() => {
             this.router.navigateByUrl('');
-          }, 500);
+          }, 1000);
         },
-        (error) => (this.errorMessage = error.error.message)
+        (error) => {
+          this.errorMessage = error.error.message;
+          this.successMessage = ''
+        }
       );
     }
   }

@@ -70,14 +70,15 @@ export class RegisterComponent {
       log.confirmPassword = this.registerForm.value['confirmPassword'];
       this.authService.register(log).subscribe(
         (data) => {
-          console.log(data);
           this.successMessage = 'Enregistrement réussi!';
+          this.errorMessage = []
           localStorage.setItem('token', (data as TokenResponse).token);
           setTimeout(() => {
             this.router.navigateByUrl('');
           }, 500);
         },
         (error) => {
+          this.successMessage = ''
           this.errorMessage = error.error.messages;
         }
       );

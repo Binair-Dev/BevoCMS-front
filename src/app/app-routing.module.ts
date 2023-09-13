@@ -14,20 +14,31 @@ import { PlayerShopHistoryComponent } from './profile/player-shop-history/player
 import { ShopItemComponent } from './shop/shop-item/shop-item.component';
 import { CreditComponent } from './credit/credit.component';
 import { authGuard } from './guards/auth.guard';
+import { WikiComponent } from './wiki/wiki.component';
+import { NewsComponent } from './home/news/news.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'news/:id', component: NewsComponent },
   { path: 'play', component: PlayComponent },
   { path: 'vote', component: VoteComponent, canActivate: [authGuard] },
   { path: 'shop', component: ShopComponent, canActivate: [authGuard] },
+  { path: 'logout', component: LogoutComponent },
+  {
+    path: 'shop-item/:id',
+    component: ShopItemComponent,
+    canActivate: [authGuard],
+  },
   { path: 'cgv', component: CgvComponent },
   { path: 'cgu', component: CguComponent },
   { path: 'mentions', component: MentionsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+  { path: 'wiki', component: WikiComponent, canActivate: [authGuard] },
   {
-    path: 'shop-player-history',
+    path: 'shop-player-history/:id',
     component: PlayerShopHistoryComponent,
     canActivate: [authGuard],
   },

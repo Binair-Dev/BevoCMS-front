@@ -31,7 +31,8 @@
             <p class="p-black">Découvrez toute l'actualité de Utopia.</p>
           </div>
           <div class="cards-article">
-            <div class="cards1-articles" *ngFor="let news of newsList">
+            <a class="cards1-articles" *ngFor="let news of newsList"
+            routerLink="/news/{{news.id}}">
               <div class="position-cercle">
                 <div class="demi-cercle">
                   <p class="khand-24">{{news.id}}</p>
@@ -45,7 +46,7 @@
                 <p class="version khand-24"></p>
                 <p class="khand-24">{{news.userName}}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -106,15 +107,15 @@
               alt="64"
               loading="lazy"
             />
-            <p>188 992<br />Inscrit</p>
+            <p>{{stats.register_count}}<br />JOUEURS INSCRITS</p>
           </div>
           <div class="chiffre">
             <img src="/assets/img/svg/membre.svg" height="64" alt="64" loading="lazy" />
-            <p>188 992<br />Inscrit</p>
+            <p>{{stats.staff}}<br />MEMBRES DU STAFF</p>
           </div>
           <div class="chiffre">
             <img src="/assets/img/svg/visie.svg" height="64" alt="64" loading="lazy" />
-            <p>188 992<br />Inscrit</p>
+            <p>{{stats.view_count}}<br />VISITEURS</p>
           </div>
         </div>
       </section>

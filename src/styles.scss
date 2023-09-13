@@ -18,6 +18,16 @@
   font-style: normal;
 }
 
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+  padding-bottom: 3.2rem;
+  border-bottom: 5px solid white;
+}
+
 .khand-32 {
 
   font-family: "Khand-bold";
@@ -496,6 +506,7 @@ h4 {
   background-color: #73324A;
   max-width: 35rem;
   height: 35rem;
+  text-decoration: none;
 
 }
 

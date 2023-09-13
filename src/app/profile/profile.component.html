@@ -9,20 +9,20 @@
       <div class="info-membre">
         <div class="position-cercle">
           <div class="demi-cercle-profile">
-            <p class="khand-24 txt-profile">Hesty</p>
+            <p class="khand-24 txt-profile">{{user.nickname}}</p>
           </div>
         </div>
           <div class="cercle-vote-profile">
             <img src="" height="" width="" alt="" loading="lazy"/>
           </div>
           <div class="info-profile">
-          <p class="khand-24">1500 points</p>
-          <p>arsefight37@gmail.com</p>
+          <p class="khand-24">{{user.credit}} points</p>
+          <p>{{user.email}}</p>
           </div>
           <div class="profile-btn">
-          <a class="btn-profile" routerLink="shop">Boutique</a>
-          <a class="btn-profile" routerLink="">Historique d'achat</a>
-          <a class="btn-profile" routerLink="logout">Déconnexion</a>
+          <a class="btn-profile" routerLink="/shop">Boutique</a>
+          <a class="btn-profile" routerLink="/shop-player-history/{{user.id}}">Historique d'achat</a>
+          <a class="btn-profile" routerLink="/logout">Déconnexion</a>
         </div>
       </div>
       <div class="modif-adresse">
@@ -34,14 +34,15 @@
         <input
         class="style-imput"
         type="text"
-        placeholder="Pseudonyme"
+        placeholder="Email actuelle"
+        value="{{user.email}}"
         name="uname"
         required
       />
       <input
         class="style-imput"
-        type="password"
-        placeholder="Enter Password"
+        type="text"
+        placeholder="Nouvelle adresse Email"
         name="psw"
         required
       />
@@ -50,21 +51,21 @@
       </div>
       <div class="modif-mdp">
         <div class="gap-profile">
-        <h3>Modification adresse mail</h3>
-        <p>Attention! Spécifiez une addresse existante,<br> nous l'utilisons pour vous contacter!</p>
+        <h3>Modification de votre mot de passe</h3>
+        <p>Veuillez spécifier un mot de passe robuste,<br>Nous ne sommes pas responsable en cas de piratage!</p>
       </div>
       <div class="input-profile">
         <input
         class="style-imput"
-        type="text"
-        placeholder="Pseudonyme"
+        type="password"
+        placeholder="Mot de passe actuel"
         name="uname"
         required
       />
       <input
         class="style-imput"
         type="password"
-        placeholder="Enter Password"
+        placeholder="Nouveau mot de passe"
         name="psw"
         required
       />

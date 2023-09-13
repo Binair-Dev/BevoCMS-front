@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Login } from '../_models/login';
 import { Register } from '../_models/register';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -9,8 +10,7 @@ import { Register } from '../_models/register';
 export class AuthService {
   BASE_URL: string = 'http://localhost:8080';
 
-  constructor(
-    private _httpClient: HttpClient) {}
+  constructor(private _httpClient: HttpClient, private router: Router) {}
 
   login(login: Login) {
     return this._httpClient.post(this.BASE_URL + '/auth/login', login);
@@ -22,6 +22,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
+    this.router.navigateByUrl('/')
   }
 
   isConnected() {
@@ -29,5 +30,9 @@ export class AuthService {
       return true;
     }
     return false;
+  }
+
+  isTokenValid() {
+    return this._httpClient.get(this.BASE_URL + '/auth/token-test');
   }
 }
