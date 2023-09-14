@@ -29,8 +29,10 @@
           <div class="desc-article">
             <h2 class="h2-black">Nos Articles</h2>
             <p class="p-black">Découvrez toute l'actualité de Utopia.</p>
+            <br><br>
+            <h2 *ngIf="newsList.length == 0" style="color: black; text-align: center;">Aucune news disponible.</h2>
           </div>
-          <div class="cards-article">
+          <div class="cards-article" *ngIf="newsList.length > 0">
             <a class="cards1-articles" *ngFor="let news of newsList"
             routerLink="/news/{{news.id}}">
               <div class="position-cercle">
