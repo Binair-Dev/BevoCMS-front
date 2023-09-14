@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <!-- Mettre le code langue du site dans l'attribut lang -->
+
+  <app-head></app-head>
+  <body>
+    <app-header></app-header>
+    <section id="mentions">
+        <h4>Vérification de votre achat..</h4>
+        <br>
+        <p *ngIf="message.length > 0">{{message}}</p>
+        <p *ngIf="message.length > 0">redirection..</p>
+    </section>
+    <app-footer></app-footer>
+    </body>
+    </html>

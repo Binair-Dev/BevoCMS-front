@@ -22,7 +22,9 @@ export class JwtInterceptor implements HttpInterceptor {
 
     if (isLoggedIn && isApiUrl) {
       request = request.clone({
-        setHeaders: { Authorization: `Bearer ` + localStorage.getItem('token')},
+        setHeaders: {
+          Authorization: `Bearer ` + localStorage.getItem('token'),
+        },
       });
     }
     return next.handle(request);

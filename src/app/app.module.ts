@@ -17,7 +17,7 @@ import { LoginComponent } from './user-components/login/login.component';
 import { RegisterComponent } from './user-components/register/register.component';
 import { ProfileComponent } from './user-components/profile/profile.component';
 import { PlayerShopHistoryComponent } from './user-components/profile/player-shop-history/player-shop-history.component';
-import { CreditComponent } from './user-components/credit/credit.component';
+import { CreditComponent } from './user-components/shop/credit/credit.component';
 import { ShopItemComponent } from './user-components/shop/shop-item/shop-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -25,6 +25,7 @@ import { WikiComponent } from './user-components/wiki/wiki.component';
 import { JwtInterceptor } from './shared/jwt.interceptor';
 import { NewsComponent } from './user-components/home/news/news.component';
 import { LogoutComponent } from './user-components/logout/logout.component';
+import { StatusCodeComponent } from './user-components/shop/status-code/status-code.component';
 
 @NgModule({
   declarations: [
@@ -48,18 +49,21 @@ import { LogoutComponent } from './user-components/logout/logout.component';
     WikiComponent,
     NewsComponent,
     LogoutComponent,
+    StatusCodeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     {
-      provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true
-    },
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent],
 })

@@ -16,4 +16,8 @@ export class ShopService {
   getShopItem(id: number | string) {
     return this._httpClient.get(this.BASE_URL + '/shop-items/' + id);
   }
+
+  addCredit(code: number | string) {
+    return this._httpClient.get(this.BASE_URL + '/dedipass/valid?code=' + code);
+  }
 }
