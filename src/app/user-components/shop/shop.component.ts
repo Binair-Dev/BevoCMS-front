@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ShopService } from '../_services/shop.service';
-import { ShopCategory } from '../_models/shop-category';
-import { UserService } from '../_services/user.service';
-import { User } from '../_models/user';
+import { ShopService } from '../../_services/shop.service';
+import { ShopCategory } from '../../_models/shop-category';
+import { UserService } from '../../_services/user.service';
+import { User } from '../../_models/user';
 
 @Component({
   selector: 'app-shop',

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../_services/auth.service';
+import { AuthService } from '../../_services/auth.service';
 import { Router } from '@angular/router';
-import { Register } from '../_models/register';
-import { TokenResponse } from '../_models/tokenResponse';
-import { confirmPasswordValidator } from '../_validators/password-confirm.validator';
+import { Register } from '../../_models/register';
+import { TokenResponse } from '../../_models/tokenResponse';
+import { confirmPasswordValidator } from '../../_validators/password-confirm.validator';
 
 @Component({
   selector: 'app-register',

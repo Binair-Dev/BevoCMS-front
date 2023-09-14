@@ -19,16 +19,16 @@ export class HeaderComponent {
 
     if (localStorage.getItem('token')) this.isConnect = true;
 
-    this.authService.isTokenValid().subscribe(
-      (data) => {
-        if(localStorage.getItem('token'))
+    if (localStorage.getItem('token')) {
+      this.authService.isTokenValid().subscribe(
+        (data) => {
           this.isConnect = true;
-      },
-      (error) => {
-        if(localStorage.getItem('token'))
-          this.authService.logout();
-      }
-    );
+        },
+        (error) => {
+          if (localStorage.getItem('token')) this.authService.logout();
+        }
+      );
+    }
 
     this.statsService.getStats().subscribe((data) => {
       this.stats = data as Information;

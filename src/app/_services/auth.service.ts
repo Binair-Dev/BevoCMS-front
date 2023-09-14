@@ -33,6 +33,6 @@ export class AuthService {
   }
 
   isTokenValid() {
-    return this._httpClient.get(this.BASE_URL + '/auth/token-test');
+    return this._httpClient.get(this.BASE_URL + '/auth/authenticated');
   }
 }

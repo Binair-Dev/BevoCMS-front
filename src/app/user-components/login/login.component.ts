@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../_services/auth.service';
+import { AuthService } from '../../_services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Login } from '../_models/login';
-import { TokenResponse } from '../_models/tokenResponse';
+import { Login } from '../../_models/login';
+import { TokenResponse } from '../../_models/tokenResponse';
 import { Router } from '@angular/router';
 
 @Component({

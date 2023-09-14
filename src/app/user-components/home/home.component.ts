@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { News } from '../_models/news';
-import { NewsService } from '../_services/news.service';
-import { StatsService } from '../_services/stats.service';
-import { Information } from '../_models/information';
+import { News } from '../../_models/news';
+import { NewsService } from '../../_services/news.service';
+import { StatsService } from '../../_services/stats.service';
+import { Information } from '../../_models/information';
 
 @Component({
   selector: 'app-home',

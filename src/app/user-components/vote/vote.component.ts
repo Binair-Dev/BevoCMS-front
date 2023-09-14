@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { VoteService } from '../_services/vote.service';
-import { Vote } from '../_models/vote';
+import { VoteService } from '../../_services/vote.service';
+import { Vote } from '../../_models/vote';
 
 @Component({
   selector: 'app-vote',
