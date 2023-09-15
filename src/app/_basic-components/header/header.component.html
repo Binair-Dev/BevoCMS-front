@@ -3,7 +3,8 @@
         <div class="navbar-top">
           <div class="connecte">
             <img src="/assets/img/svg/connecte.svg" height="16" width="16" alt="" />
-            <p>{{stats.connected_players}} connectés</p>
+            <p *ngIf="stats != null && stats.connected_players != ''">{{stats.connected_players}}</p>
+            <p *ngIf="stats == null || stats.connected_players.length == 0">Le serveur est actuellement hors-ligne</p>
           </div>
           <div class="connexion">
             <ng-container>

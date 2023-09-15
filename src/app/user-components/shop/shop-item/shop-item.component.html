@@ -17,7 +17,15 @@
                 <h4 class="mrg-24">Description :</h4>
                 <p>{{shopItem.description}}</p>
             </div>
-            <button class="btn-achete" type="button">Acheter</button>
+            <button *ngIf="successMessage.length == 0 || errorMessage.length == 0" (click)="buyItem(shopItem.id)" class="btn-achete" type="button">Acheter</button>
+            <div *ngIf="successMessage.length > 0" class="form-success" style="padding: 10px;">
+              <h4>{{successMessage}}</h4>
+              <p>redirection..</p>
+            </div>
+            <div *ngIf="errorMessage.length > 0" class="form-danger" style="padding: 10px;">
+              <h4>{{errorMessage}}</h4>
+              <p>redirection..</p>
+            </div>
             </div>
           </section>
       <app-footer></app-footer>

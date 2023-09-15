@@ -20,4 +20,10 @@ export class ShopService {
   addCredit(code: number | string) {
     return this._httpClient.get(this.BASE_URL + '/dedipass/valid?code=' + code);
   }
+
+  buyShopItem(id: number) {
+    return this._httpClient.get(
+      this.BASE_URL + '/shop/buy?shopItemId=' + id
+    );
+  }
 }
