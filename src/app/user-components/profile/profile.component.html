@@ -30,47 +30,79 @@
         <h3>Modification adresse mail</h3>
         <p>Attention! Spécifiez une addresse existante,<br> nous l'utilisons pour vous contacter!</p>
       </div>
-      <div class="input-profile">
-        <input
+      <div class="form-danger" *ngIf="errorEmailMessage.length > 0">
+        <p>{{errorEmailMessage}}</p>
+      </div>
+      <div class="form-success" *ngIf="successEmailMessage.length > 0">
+        <p>{{successEmailMessage}}</p>
+      </div>
+      <br>
+      <form [formGroup]="emailForm" class="input-profile">
+      <ng-container *ngIf="emailForm.controls['old_email'].errors && emailForm.controls['old_email'].touched">
+        <span class="form-danger" *ngIf="emailForm.controls['old_email'].errors['email']">Le format de votre email n'est pas bon!</span>
+        <span class="form-danger" *ngIf="emailForm.controls['old_email'].errors['required']">L'email est requis!</span>
+      </ng-container>
+      <input
         class="style-imput"
         type="text"
         placeholder="Email actuelle"
-        value="{{user.email}}"
         name="uname"
         required
+        formControlName="old_email"
       />
+      <ng-container *ngIf="emailForm.controls['new_email'].errors && emailForm.controls['new_email'].touched">
+        <span class="form-danger" *ngIf="emailForm.controls['new_email'].errors['email']">Le format de votre nouvel email n'est pas bon!</span>
+        <span class="form-danger" *ngIf="emailForm.controls['new_email'].errors['required']">Le nouvel email est requis!</span>
+      </ng-container>
       <input
         class="style-imput"
         type="text"
         placeholder="Nouvelle adresse Email"
         name="psw"
         required
+        formControlName="new_email"
       />
-      </div>
-        <a class="btn-profile-mail" href="">Modifier</a>
+      </form>
+        <a class="btn-profile-mail" (click)="updateEmail()">Modifier</a>
       </div>
       <div class="modif-mdp">
         <div class="gap-profile">
         <h3>Modification de votre mot de passe</h3>
         <p>Veuillez spécifier un mot de passe robuste,<br>Nous ne sommes pas responsable en cas de piratage!</p>
       </div>
-      <div class="input-profile">
-        <input
+      <div class="form-danger" *ngIf="errorPasswordMessage.length > 0">
+        <p>{{errorPasswordMessage}}</p>
+      </div>
+      <div class="form-success" *ngIf="successPasswordMessage.length > 0">
+        <p>{{successPasswordMessage}}</p>
+      </div>
+      <form [formGroup]="passwordForm" class="input-profile">
+      <ng-container *ngIf="passwordForm.controls['old_password'].errors && passwordForm.controls['old_password'].touched">
+        <span class="form-danger" *ngIf="passwordForm.controls['old_password'].errors['minlength']">Le mot de passe doit contenir au moins {{passwordForm.controls['old_password'].errors['minlength']['requiredLength']}} caractères !</span>
+        <span class="form-danger" *ngIf="passwordForm.controls['old_password'].errors['maxlength']">Le mot de passe doit contenir au maximum {{passwordForm.controls['old_password'].errors['maxlength']['requiredLength']}} caractères !</span>
+      </ng-container>
+      <input
         class="style-imput"
         type="password"
         placeholder="Mot de passe actuel"
         name="uname"
         required
+        formControlName="old_password"
       />
+      <ng-container *ngIf="passwordForm.controls['new_password'].errors && passwordForm.controls['new_password'].touched">
+        <span class="form-danger" *ngIf="passwordForm.controls['new_password'].errors['minlength']">Le mot de passe doit contenir au moins {{passwordForm.controls['new_password'].errors['minlength']['requiredLength']}} caractères !</span>
+        <span class="form-danger" *ngIf="passwordForm.controls['new_password'].errors['maxlength']">Le mot de passe doit contenir au maximum {{passwordForm.controls['new_password'].errors['maxlength']['requiredLength']}} caractères !</span>
+      </ng-container>
       <input
         class="style-imput"
         type="password"
         placeholder="Nouveau mot de passe"
         name="psw"
         required
+        formControlName="new_password"
       />
-    </div>
-        <a class="btn-profile-mail" href="">Modifier</a>
+    </form>
+        <a class="btn-profile-mail"  (click)="updatePassword()">Modifier</a>
       </div>
       <div class="skin">
         <h3>Modification de votre skins</h3>

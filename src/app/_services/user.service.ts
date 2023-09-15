@@ -12,4 +12,12 @@ export class UserService {
   getUser(id: number | string) {
     return this._httpClient.get(this.BASE_URL + '/users/' + id);
   }
+
+  updateUserEmail(id: number, user: any) {
+    return this._httpClient.patch(this.BASE_URL + '/users/update/email', user);
+  }
+
+  updateUserPassword(id: number, user: any) {
+    return this._httpClient.patch(this.BASE_URL + '/users/update/password', user);
+  }
 }
