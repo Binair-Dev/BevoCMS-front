@@ -18,6 +18,13 @@ export class UserService {
   }
 
   updateUserPassword(id: number, user: any) {
-    return this._httpClient.patch(this.BASE_URL + '/users/update/password', user);
+    return this._httpClient.patch(
+      this.BASE_URL + '/users/update/password',
+      user
+    );
+  }
+
+  uploadSkin(formData: FormData) {
+    return this._httpClient.post(this.BASE_URL + "/skins/upload", formData);
   }
 }

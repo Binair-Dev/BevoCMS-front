@@ -106,12 +106,19 @@
       </div>
       <div class="skin">
         <h3>Modification de votre skins</h3>
-
+        <div class="form-danger" *ngIf="errorSkinMessage.length > 0">
+          <p>{{errorSkinMessage}}</p>
+        </div>
+        <div class="form-success" *ngIf="successSkinMessage.length > 0">
+          <p>{{successSkinMessage}}</p>
+        </div>
         <div class="modif-skin">
         <input type="file"
         id="avatar" name="avatar"
-        accept="image/png, image/jpeg">
-        <a class="btn-profile-mail" href="">Modifier</a>
+        accept="image/png, image/jpeg"
+        (change)="onFileSelected($event)"
+        >
+        <a (click)="onUpload()" class="btn-profile-mail">Modifier</a>
       </div>
       </div>
     </section>
