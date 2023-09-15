@@ -25,6 +25,10 @@ export class UserService {
   }
 
   uploadSkin(formData: FormData) {
-    return this._httpClient.post(this.BASE_URL + "/skins/upload", formData);
+    return this._httpClient.post(this.BASE_URL + '/skins/upload', formData);
+  }
+
+  getShopHistory() {
+    return this._httpClient.get(this.BASE_URL + '/shop-transactions/history');
   }
 }

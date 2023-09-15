@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
   { path: 'wiki', component: WikiComponent, canActivate: [authGuard] },
   {
-    path: 'shop-player-history/:id',
+    path: 'shop-player-history',
     component: PlayerShopHistoryComponent,
     canActivate: [authGuard],
   },

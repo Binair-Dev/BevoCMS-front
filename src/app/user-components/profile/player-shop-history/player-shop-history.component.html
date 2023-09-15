@@ -7,55 +7,32 @@
     <app-header></app-header>
     <section id="historique-achat">
           <h2 class="vote">Historique d'achat</h2>
-                <div class="voteur">
-                <div class="top-voteur">
-                  <div class="perso-vote">
+          <div class="voteur">
+            <div *ngFor="let st of buyHistory" class="top-voteur">
+              <div class="perso-vote">
                     <div class="persos-vote">
                     <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
+                      <img src="{{st.item.content_image}}" height="" width="" alt="" loading="lazy"/>
                     </div>
                     <div class="position-start">
-                      <p>Hesty</p>
+                      <span class="history-title">Référence:</span>
+                      <span class="history-answer">{{st.id}}</span>
+                      <span class="history-title">|</span>
+                      <span class="history-title">Joueur:</span>
+                      <span class="history-answer">{{st.user_name}}</span>
+                      <span class="history-title">|</span>
+                      <span class="history-title">Article:</span>
+                      <span class="history-answer">{{st.item.title}}</span>
                     </div>
                     </div>
                   <div class="position-end">
-                    <p>Kit druide</p>
-                    <p>-</p>
-                    <p>500 pb</p>
+                    <span class="history-title">Prix:</span>
+                    <span class="history-answer">{{st.item.price}}</span>
+                    <span class="history-title">crédits</span>
                   </div>
                   </div>
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>Kit druide</p>
-                    <p>-</p>
-                    <p>500 pb</p>
-                  </div>
-                  </div>
-                  <div class="perso-vote">
-                    <div class="persos-vote">
-                    <div class="cercle-vote">
-                      <img src="" height="" width="" alt="" loading="lazy"/>
-                    </div>
-                    <div class="position-start">
-                      <p>Hesty</p>
-                    </div>
-                    </div>
-                  <div class="position-end">
-                    <p>Kit druide</p>
-                    <p>-</p>
-                    <p>500 pb</p>
-                  </div>
-                  </div>
-        </div>
-        </div>
+            </div>
+          </div>
       </section>
       <app-footer></app-footer>
     </body>
