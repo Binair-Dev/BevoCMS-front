@@ -45,7 +45,7 @@ export class LoginComponent {
     });
   }
 
-  async login() {
+  login() {
     if (this.loginForm.valid) {
       let log = new Login();
       log.username = this.loginForm.value['username'];

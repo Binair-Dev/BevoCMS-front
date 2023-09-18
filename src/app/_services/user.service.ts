@@ -13,6 +13,16 @@ export class UserService {
     return this._httpClient.get(this.BASE_URL + '/users/' + id);
   }
 
+  getUsers() {
+    return this._httpClient.get(this.BASE_URL + '/users/list');
+  }
+
+  getUsersFromTo(page: number, size: number) {
+    return this._httpClient.get(
+      this.BASE_URL + '/users/list?page=' + page + '&size=' + size
+    );
+  }
+
   updateUserEmail(id: number, user: any) {
     return this._httpClient.patch(this.BASE_URL + '/users/update/email', user);
   }
@@ -30,5 +40,9 @@ export class UserService {
 
   getShopHistory() {
     return this._httpClient.get(this.BASE_URL + '/shop-transactions/history');
+  }
+
+  updateUser(id: number | string, user: any) {
+    return this._httpClient.patch(this.BASE_URL + '/users/update/' + id, user);
   }
 }

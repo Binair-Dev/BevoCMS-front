@@ -26,6 +26,13 @@ import { JwtInterceptor } from './shared/jwt.interceptor';
 import { NewsComponent } from './user-components/home/news/news.component';
 import { LogoutComponent } from './user-components/logout/logout.component';
 import { StatusCodeComponent } from './user-components/shop/status-code/status-code.component';
+import { AdminComponent } from './_admin-components/admin/admin.component';
+import { AdminFooterComponent } from './_admin-components/admin-footer/admin-footer.component';
+import { AdminHeadComponent } from './_admin-components/admin-head/admin-head.component';
+import { AdminNavComponent } from './_admin-components/admin-nav/admin-nav.component';
+import { AdminMemberEditComponent } from './_admin-components/admin-member-edit/admin-member-edit.component';
+import { AdminMembersComponent } from './_admin-components/admin-members/admin-members.component';
+import { AdminSidebarComponent } from './_admin-components/admin-sidebar/admin-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +57,13 @@ import { StatusCodeComponent } from './user-components/shop/status-code/status-c
     NewsComponent,
     LogoutComponent,
     StatusCodeComponent,
+    AdminComponent,
+    AdminHeadComponent,
+    AdminFooterComponent,
+    AdminNavComponent,
+    AdminMembersComponent,
+    AdminMemberEditComponent,
+    AdminSidebarComponent,
   ],
   imports: [
     BrowserModule,

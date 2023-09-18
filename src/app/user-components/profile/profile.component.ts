@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { User } from '../../_models/user';
 import { UserService } from '../../_services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DecodedToken } from 'src/app/_models/decodedToken';
+import { JwtDecodeOptions } from 'jwt-decode';
+import { TokenDecoderService } from 'src/app/_services/token-decoder.service';
 
 @Component({
   selector: 'app-profile',
@@ -18,8 +21,13 @@ export class ProfileComponent {
   errorSkinMessage: string = '';
   successSkinMessage: string = '';
   selectedFile: File | null = null;
+  decodedToken: DecodedToken = new DecodedToken();
 
-  constructor(private userService: UserService, private fb: FormBuilder) {
+  constructor(
+    private userService: UserService,
+    private fb: FormBuilder,
+    private tokenDecodeService: TokenDecoderService
+  ) {
     this.emailForm = this.fb.group({
       old_email: ['', [Validators.email, Validators.required]],
       new_email: ['', [Validators.email, Validators.required]],
@@ -44,7 +52,13 @@ export class ProfileComponent {
       ],
     });
 
-    this.userService.getUser(1).subscribe((data) => {
+    if (localStorage.getItem('token') != null) {
+      this.decodedToken = tokenDecodeService.getDecodedAccessToken(
+        localStorage.getItem('token') as string
+      ) as DecodedToken;
+    }
+
+    this.userService.getUser(this.decodedToken.id).subscribe((data) => {
       this.user = data as User;
     });
   }
@@ -107,8 +121,7 @@ export class ProfileComponent {
 
     this.userService.uploadSkin(formData).subscribe(
       (data) => {
-        this.successSkinMessage =
-          'Votre skin a bien été modifié!';
+        this.successSkinMessage = 'Votre skin a bien été modifié!';
         setTimeout(() => {
           window.location.reload();
         }, 1000);

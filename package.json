@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@types/scriptjs": "^0.0.2",
+    "jwt-decode": "^3.1.2",
     "rxjs": "~7.8.0",
     "scriptjs": "^2.5.9",
     "tslib": "^2.3.0",

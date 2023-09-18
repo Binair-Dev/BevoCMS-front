@@ -18,6 +18,10 @@ import { WikiComponent } from './user-components/wiki/wiki.component';
 import { NewsComponent } from './user-components/home/news/news.component';
 import { LogoutComponent } from './user-components/logout/logout.component';
 import { StatusCodeComponent } from './user-components/shop/status-code/status-code.component';
+import { adminGuard } from './guards/admin.guard';
+import { AdminComponent } from './_admin-components/admin/admin.component';
+import { AdminMembersComponent } from './_admin-components/admin-members/admin-members.component';
+import { AdminMemberEditComponent } from './_admin-components/admin-member-edit/admin-member-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,11 +30,7 @@ const routes: Routes = [
   { path: 'vote', component: VoteComponent, canActivate: [authGuard] },
   { path: 'shop', component: ShopComponent, canActivate: [authGuard] },
   { path: 'logout', component: LogoutComponent },
-  {
-    path: 'shop-item/:id',
-    component: ShopItemComponent,
-    canActivate: [authGuard],
-  },
+  { path: 'shop-item/:id', component: ShopItemComponent, canActivate: [authGuard] },
   { path: 'cgv', component: CgvComponent },
   { path: 'cgu', component: CguComponent },
   { path: 'mentions', component: MentionsComponent },
@@ -38,14 +38,13 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
   { path: 'wiki', component: WikiComponent, canActivate: [authGuard] },
-  {
-    path: 'shop-player-history',
-    component: PlayerShopHistoryComponent,
-    canActivate: [authGuard],
-  },
+  { path: 'shop-player-history', component: PlayerShopHistoryComponent, canActivate: [authGuard]},
   { path: 'shop-item', component: ShopItemComponent, canActivate: [authGuard] },
   { path: 'credit', component: CreditComponent, canActivate: [authGuard] },
   { path: 'status-code', component: StatusCodeComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [adminGuard] },
+  { path: 'admin/members', component: AdminMembersComponent, canActivate: [adminGuard]},
+  { path: 'admin/member/:id', component: AdminMemberEditComponent, canActivate: [adminGuard]}
 ];
 
 @NgModule({
