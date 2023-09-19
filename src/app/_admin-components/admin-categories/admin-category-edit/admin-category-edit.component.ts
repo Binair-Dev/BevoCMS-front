@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ShopCategory } from 'src/app/_models/shop-category';
-import { ShopCategoryUpdate } from 'src/app/_models/shop-category-update';
+import { ShopCategoryForm } from 'src/app/_models/shop-category-form';
 import { ShopService } from 'src/app/_services/shop.service';
 import { TokenDecoderService } from 'src/app/_services/token-decoder.service';
 
@@ -43,7 +43,7 @@ export class AdminCategoryEditComponent {
 
   updateCategory() {
     if (this.categoryFormGroup.valid) {
-      let tosend = new ShopCategoryUpdate();
+      let tosend = new ShopCategoryForm();
       tosend.title = this.categoryFormGroup.controls['title'].value;
       tosend.displayOrder =
         this.categoryFormGroup.controls['displayOrder'].value;

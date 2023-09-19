@@ -45,4 +45,8 @@ export class AdminImagesComponent {
       window.location.reload();
     });
   }
+
+  open(link: string) {
+    window.open(link,'_blank');
+  }
 }

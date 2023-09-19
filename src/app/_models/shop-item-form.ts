@@ -1,4 +1,4 @@
-export class ShopItemUpdate {
+export class ShopItemForm {
   title: string = '';
   description: string = '';
   image: string = '';

@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Server } from 'src/app/_models/server';
 import { ShopCategory } from 'src/app/_models/shop-category';
 import { ShopItem } from 'src/app/_models/shop-item';
-import { ShopItemUpdate } from 'src/app/_models/shop-item-update';
+import { ShopItemForm } from 'src/app/_models/shop-item-form';
 import { ServerService } from 'src/app/_services/server.service';
 import { ShopService } from 'src/app/_services/shop.service';
 
@@ -66,7 +66,7 @@ export class AdminArticleEditComponent {
   updateArticle() {
     if(this.articleFormGroup.valid) {
       if (this.articleFormGroup.valid) {
-        let tosend = new ShopItemUpdate();
+        let tosend = new ShopItemForm();
         tosend.title = this.articleFormGroup.controls['title'].value;
         tosend.description = this.articleFormGroup.controls['description'].value;
         tosend.image = this.articleFormGroup.controls['image'].value;

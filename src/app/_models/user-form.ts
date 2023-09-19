@@ -1,6 +1,6 @@
 import { Rank } from './rank';
 
-export class UserUpdate {
+export class UserForm {
   username: string = '';
   email: string = '';
   password: string = '';

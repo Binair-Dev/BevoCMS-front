@@ -58,11 +58,13 @@
                       <tr>
                         <th>Image</th>
                         <th></th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let user of images.images">
                         <td>{{user}}</td>
+                        <td><button title="open" (click)="open(user)" class="btn btn-success">Ouvrir</button></td>
                         <td><button (click)="deleteImage(user)" title="delete" class="btn btn-danger">X</button></td>
                       </tr>
                     </tbody>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ShopCategoryUpdate } from '../_models/shop-category-update';
-import { ShopItemUpdate } from '../_models/shop-item-update';
+import { ShopCategoryForm } from '../_models/shop-category-form';
+import { ShopItemForm } from '../_models/shop-item-form';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +19,7 @@ export class ShopService {
     return this._httpClient.get(this.BASE_URL + '/shop-categories/' + id);
   }
 
-  updateCategory(id: number | string, tosend: ShopCategoryUpdate) {
+  updateCategory(id: number | string, tosend: ShopCategoryForm) {
     return this._httpClient.patch(
       this.BASE_URL + '/shop-categories/update/' + id,
       tosend
@@ -32,7 +32,7 @@ export class ShopService {
     );
   }
 
-  createCategory(tosend: ShopCategoryUpdate) {
+  createCategory(tosend: ShopCategoryForm) {
     return this._httpClient.post(
       this.BASE_URL + '/shop-categories/create',
       tosend
@@ -59,7 +59,7 @@ export class ShopService {
     return this._httpClient.get(this.BASE_URL + '/shop-items/' + id);
   }
 
-  updateArticle(id: number | string, tosend: ShopItemUpdate) {
+  updateArticle(id: number | string, tosend: ShopItemForm) {
     return this._httpClient.patch(
       this.BASE_URL + '/shop-items/update/' + id,
       tosend
@@ -70,10 +70,7 @@ export class ShopService {
     return this._httpClient.delete(this.BASE_URL + '/shop-items/delete/' + id);
   }
 
-  createArticle(tosend: ShopItemUpdate) {
-    return this._httpClient.post(
-      this.BASE_URL + '/shop-items/create',
-      tosend
-    );
+  createArticle(tosend: ShopItemForm) {
+    return this._httpClient.post(this.BASE_URL + '/shop-items/create', tosend);
   }
 }

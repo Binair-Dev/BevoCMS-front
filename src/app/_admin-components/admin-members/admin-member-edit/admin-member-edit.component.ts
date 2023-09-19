@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DecodedToken } from 'src/app/_models/decodedToken';
 import { Rank } from 'src/app/_models/rank';
 import { User } from 'src/app/_models/user';
-import { UserUpdate } from 'src/app/_models/user-update';
+import { UserForm } from 'src/app/_models/user-form';
 import { RankService } from 'src/app/_services/rank.service';
 import { TokenDecoderService } from 'src/app/_services/token-decoder.service';
 import { UserService } from 'src/app/_services/user.service';
@@ -66,7 +66,7 @@ export class AdminMemberEditComponent {
 
   submit() {
     if(this.userFormGroup.valid) {
-      let tosend = new UserUpdate();
+      let tosend = new UserForm();
       tosend.username = this.userFormGroup.controls['username'].value;
       tosend.email =this.userFormGroup.controls['email'].value;
       tosend.password = this.userFormGroup.controls['password'].value;
