@@ -33,8 +33,16 @@ export class AdminImagesComponent {
     const formData = new FormData();
     formData.append('file', this.selectedFile);
 
-    this.imageService.uploadImage(formData).subscribe(
-      (data) => window.location.reload()
-    );
+    this.imageService
+      .uploadImage(formData)
+      .subscribe((data) => window.location.reload());
+  }
+
+  deleteImage(name: string) {
+    let splitted = name.split('/');
+    let clearName = splitted[splitted.length - 1];
+    this.imageService.deleteImage(clearName).subscribe((data) => {
+      window.location.reload();
+    });
   }
 }

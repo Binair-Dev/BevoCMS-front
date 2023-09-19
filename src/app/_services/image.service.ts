@@ -20,4 +20,8 @@ export class ImageService {
   getImage(name: string) {
     return this._httpClient.get(this.BASE_URL + '/images/get/' + name);
   }
+
+  deleteImage(name: string) {
+    return this._httpClient.delete(this.BASE_URL + '/images/delete/' + name);
+  }
 }
