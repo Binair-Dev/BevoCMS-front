@@ -1,23 +1,37 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { DecodedToken } from 'src/app/_models/decodedToken';
 import { Information } from 'src/app/_models/information';
 import { AuthService } from 'src/app/_services/auth.service';
 import { StatsService } from 'src/app/_services/stats.service';
-import { UserService } from 'src/app/_services/user.service';
+import { TokenDecoderService } from 'src/app/_services/token-decoder.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
 })
-export class HeaderComponent {
+export class NavComponent {
   isConnect: boolean = false;
   stats: Information = new Information();
+  decodedToken: DecodedToken = new DecodedToken()
+  isAdmin: boolean = false
 
   constructor(
     private authService: AuthService,
-    private statsService: StatsService) {
+    private statsService: StatsService,
+    private tokenDecodeService: TokenDecoderService) {
 
     if (localStorage.getItem('token')) this.isConnect = true;
+
+    if(this.isConnect) {
+      this.decodedToken = this.tokenDecodeService.getDecodedAccessToken(
+        localStorage.getItem('token') as string
+      ) as DecodedToken;
+
+      this.decodedToken.roles.forEach((element) => {
+        if (element.includes('ADMINISTRATEUR')) this.isAdmin = true;
+      });
+    }
+
 
     if (localStorage.getItem('token')) {
       this.authService.isTokenValid().subscribe(

@@ -23,7 +23,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');
     this.router.navigateByUrl('/')
-    setTimeout(() => (window.location.reload()), 500)
+    setTimeout(() => (window.location.reload()), 50)
   }
 
   isConnected() {

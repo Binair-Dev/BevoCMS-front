@@ -4,9 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlayComponent } from './user-components/play/play.component';
-import { FooterComponent } from './_basic-components/footer/footer.component';
-import { HeadComponent } from './_basic-components/head/head.component';
-import { HeaderComponent } from './_basic-components/header/header.component';
+import { FooterComponent } from './user-components/_basic-components/footer/footer.component';
+import { HeadComponent } from './user-components/_basic-components/head/head.component';
 import { HomeComponent } from './user-components/home/home.component';
 import { VoteComponent } from './user-components/vote/vote.component';
 import { ShopComponent } from './user-components/shop/shop.component';
@@ -30,9 +29,12 @@ import { AdminComponent } from './_admin-components/admin/admin.component';
 import { AdminFooterComponent } from './_admin-components/admin-footer/admin-footer.component';
 import { AdminHeadComponent } from './_admin-components/admin-head/admin-head.component';
 import { AdminNavComponent } from './_admin-components/admin-nav/admin-nav.component';
-import { AdminMemberEditComponent } from './_admin-components/admin-member-edit/admin-member-edit.component';
+import { AdminMemberEditComponent } from './_admin-components/admin-members/admin-member-edit/admin-member-edit.component';
 import { AdminMembersComponent } from './_admin-components/admin-members/admin-members.component';
 import { AdminSidebarComponent } from './_admin-components/admin-sidebar/admin-sidebar.component';
+import { NavComponent } from './user-components/_basic-components/nav/nav.component';
+import { AdminCategoriesComponent } from './_admin-components/admin-categories/admin-categories.component';
+import { AdminCategoryEditComponent } from './_admin-components/admin-categories/admin-category-edit/admin-category-edit.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { AdminSidebarComponent } from './_admin-components/admin-sidebar/admin-s
     PlayComponent,
     FooterComponent,
     HeadComponent,
-    HeaderComponent,
+    NavComponent,
     HomeComponent,
     VoteComponent,
     ShopComponent,
@@ -64,6 +66,8 @@ import { AdminSidebarComponent } from './_admin-components/admin-sidebar/admin-s
     AdminMembersComponent,
     AdminMemberEditComponent,
     AdminSidebarComponent,
+    AdminCategoriesComponent,
+    AdminCategoryEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,7 @@ import { AdminSidebarComponent } from './_admin-components/admin-sidebar/admin-s
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true,
-    }
+    },
   ],
   bootstrap: [AppComponent],
 })

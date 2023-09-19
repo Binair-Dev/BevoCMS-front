@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ShopCategoryUpdate } from '../_models/shop-category-update';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,22 @@ export class ShopService {
     return this._httpClient.get(this.BASE_URL + '/shop-categories/list');
   }
 
+  getCategory(id: number | string) {
+    return this._httpClient.get(this.BASE_URL + '/shop-categories/' + id);
+  }
+
+  updateCategory(id: number | string, tosend: ShopCategoryUpdate) {
+    return this._httpClient.patch(this.BASE_URL + '/shop-categories/update/' + id, tosend);
+  }
+
+  deleteCategory(id: number | string) {
+    return this._httpClient.delete(this.BASE_URL + '/shop-categories/delete/' + id);
+  }
+
+  createCategory(tosend: ShopCategoryUpdate) {
+    return this._httpClient.post(this.BASE_URL + '/shop-categories/create', tosend);
+  }
+
   getShopItem(id: number | string) {
     return this._httpClient.get(this.BASE_URL + '/shop-items/' + id);
   }
@@ -22,8 +39,6 @@ export class ShopService {
   }
 
   buyShopItem(id: number) {
-    return this._httpClient.get(
-      this.BASE_URL + '/shop/buy?shopItemId=' + id
-    );
+    return this._httpClient.get(this.BASE_URL + '/shop/buy?shopItemId=' + id);
   }
 }

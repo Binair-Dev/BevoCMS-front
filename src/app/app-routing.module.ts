@@ -21,7 +21,9 @@ import { StatusCodeComponent } from './user-components/shop/status-code/status-c
 import { adminGuard } from './guards/admin.guard';
 import { AdminComponent } from './_admin-components/admin/admin.component';
 import { AdminMembersComponent } from './_admin-components/admin-members/admin-members.component';
-import { AdminMemberEditComponent } from './_admin-components/admin-member-edit/admin-member-edit.component';
+import { AdminMemberEditComponent } from './_admin-components/admin-members/admin-member-edit/admin-member-edit.component';
+import { AdminCategoriesComponent } from './_admin-components/admin-categories/admin-categories.component';
+import { AdminCategoryEditComponent } from './_admin-components/admin-categories/admin-category-edit/admin-category-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -44,7 +46,11 @@ const routes: Routes = [
   { path: 'status-code', component: StatusCodeComponent },
   { path: 'admin', component: AdminComponent, canActivate: [adminGuard] },
   { path: 'admin/members', component: AdminMembersComponent, canActivate: [adminGuard]},
-  { path: 'admin/member/:id', component: AdminMemberEditComponent, canActivate: [adminGuard]}
+  { path: 'admin/member/:id', component: AdminMemberEditComponent, canActivate: [adminGuard]},
+  { path: 'admin/categories', component: AdminCategoriesComponent, canActivate: [adminGuard]},
+  { path: 'admin/category/:id', component: AdminCategoryEditComponent, canActivate: [adminGuard]},
+
+
 ];
 
 @NgModule({

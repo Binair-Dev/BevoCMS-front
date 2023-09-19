@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <app-admin-head></app-admin-head>
+  <body class="skin-blue">
+    <div class="wrapper">
+      <header class="main-header">
+        <!-- Logo -->
+        <a routerLink="/admin" class="logo"><b>Utopia | </b>Admin</a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <app-admin-sidebar></app-admin-sidebar>
+      <!-- Right side column. Contains the navbar and content of the page -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Catégories
+            <small>Liste des catégories</small>
+          </h1>
+        </section>
+
+        <!-- Main content -->
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header">
+                  <h3 class="box-title">Modifier une catégorie</h3>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" [formGroup]="categoryFormGroup">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label>Nom</label>
+                      <input formControlName="title" value="{{category.title}}" type="email" class="form-control" placeholder="Kit">
+                    </div>
+                    <div class="form-group">
+                      <label>Ordre d'affichage</label>
+                      <input formControlName="displayOrder" value="{{category.displayOrder}}" type="number" class="form-control" placeholder="2">
+                    </div>
+                  </div><!-- /.box-body -->
+                  <div class="box-footer text-center">
+                    <button (click)="updateCategory()" class="btn btn-primary">Envoyer</button>
+                    <button style="margin-left: 100px;" (click)="deleteCategory()" class="btn btn-danger">Supprimer</button>
+                  </div>
+                </form>
+              </div><!-- /.box -->
+            </div>
+          </div><!-- /.row -->
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <app-admin-footer></app-admin-footer>
+    </div><!-- ./wrapper -->
+  </body>
+</html>
