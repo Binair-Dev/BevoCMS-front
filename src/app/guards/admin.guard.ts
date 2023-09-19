@@ -6,7 +6,7 @@ import { DecodedToken } from '../_models/decodedToken';
 import { UserService } from '../_services/user.service';
 import { User } from '../_models/user';
 
-export const adminGuard: CanActivateFn = (route, state) => {
+export const adminGuard: CanActivateFn = async (route, state) => {
   let router = inject(Router);
   let authService = inject(AuthService);
   let tokenDecodeService = inject(TokenDecoderService);
@@ -18,12 +18,13 @@ export const adminGuard: CanActivateFn = (route, state) => {
     let token = tokenDecodeService.getDecodedAccessToken(localStorage.getItem('token') as string) as DecodedToken;
     let user : User = new User();
 
-    userService.getUser(token.id).subscribe((data) => {
-      user = data as User;
+    await userService.getUser(token.id).toPromise().then((data) => {
+      user = data as User
     })
 
-    if(user.rank.id === 0)
+    if (user.rank.id === 1) {
       return true;
+    }
     return false;
   } else {
     router.navigateByUrl('/');

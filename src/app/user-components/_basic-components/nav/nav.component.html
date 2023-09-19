@@ -10,7 +10,7 @@
             <ng-container>
               <a *ngIf="isConnect" class="connecte" routerLink="/profile">
                 <img src="/assets/img/svg/profile.svg" height="20" width="20"/>Profil</a>
-              <a *ngIf="isConnect" class="connecte" routerLink="/admin">
+              <a *ngIf="isConnect && isAdmin" class="connecte" routerLink="/admin">
                 <img src="/assets/img/svg/admin.svg" height="20" width="20"/>Admin</a>
               <a *ngIf="isConnect" class="connecte" (click)="logout()"
               ><img src="/assets/img/svg/Deconnexion.svg" height="20" width="20"/>Déconnexion</a>
