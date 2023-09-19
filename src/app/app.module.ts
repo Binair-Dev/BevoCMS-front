@@ -35,6 +35,8 @@ import { AdminSidebarComponent } from './_admin-components/admin-sidebar/admin-s
 import { NavComponent } from './user-components/_basic-components/nav/nav.component';
 import { AdminCategoriesComponent } from './_admin-components/admin-categories/admin-categories.component';
 import { AdminCategoryEditComponent } from './_admin-components/admin-categories/admin-category-edit/admin-category-edit.component';
+import { AdminArticlesComponent } from './_admin-components/admin-articles/admin-articles.component';
+import { AdminArticleEditComponent } from './_admin-components/admin-articles/admin-article-edit/admin-article-edit.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +70,8 @@ import { AdminCategoryEditComponent } from './_admin-components/admin-categories
     AdminSidebarComponent,
     AdminCategoriesComponent,
     AdminCategoryEditComponent,
+    AdminArticlesComponent,
+    AdminArticleEditComponent,
   ],
   imports: [
     BrowserModule,
