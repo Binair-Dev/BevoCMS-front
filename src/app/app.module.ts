@@ -37,6 +37,7 @@ import { AdminCategoriesComponent } from './_admin-components/admin-categories/a
 import { AdminCategoryEditComponent } from './_admin-components/admin-categories/admin-category-edit/admin-category-edit.component';
 import { AdminArticlesComponent } from './_admin-components/admin-articles/admin-articles.component';
 import { AdminArticleEditComponent } from './_admin-components/admin-articles/admin-article-edit/admin-article-edit.component';
+import { AdminImagesComponent } from './_admin-components/admin-images/admin-images.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { AdminArticleEditComponent } from './_admin-components/admin-articles/ad
     AdminCategoryEditComponent,
     AdminArticlesComponent,
     AdminArticleEditComponent,
+    AdminImagesComponent,
   ],
   imports: [
     BrowserModule,

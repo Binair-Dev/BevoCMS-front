@@ -26,6 +26,7 @@ import { AdminCategoriesComponent } from './_admin-components/admin-categories/a
 import { AdminCategoryEditComponent } from './_admin-components/admin-categories/admin-category-edit/admin-category-edit.component';
 import { AdminArticlesComponent } from './_admin-components/admin-articles/admin-articles.component';
 import { AdminArticleEditComponent } from './_admin-components/admin-articles/admin-article-edit/admin-article-edit.component';
+import { AdminImagesComponent } from './_admin-components/admin-images/admin-images.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -53,7 +54,7 @@ const routes: Routes = [
   { path: 'admin/category/:id', component: AdminCategoryEditComponent, canActivate: [adminGuard]},
   { path: 'admin/articles', component: AdminArticlesComponent, canActivate: [adminGuard]},
   { path: 'admin/article/:id', component: AdminArticleEditComponent, canActivate: [adminGuard]},
-
+  { path: 'admin/images', component: AdminImagesComponent, canActivate: [adminGuard]},
 ];
 
 @NgModule({
