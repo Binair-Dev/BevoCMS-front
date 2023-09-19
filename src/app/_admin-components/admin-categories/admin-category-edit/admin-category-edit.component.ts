@@ -28,8 +28,8 @@ export class AdminCategoryEditComponent {
     });
 
     this.categoryFormGroup = this.fb.group({
-      title: ['', [Validators.minLength(3)]],
-      displayOrder: ['', [Validators.min(1)]],
+      title: ['', [Validators.minLength(3), Validators.required]],
+      displayOrder: ['', [Validators.min(1), Validators.required]],
     });
 
     this.shopService.getCategory(this.id).subscribe((data) => {

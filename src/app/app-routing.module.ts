@@ -24,6 +24,8 @@ import { AdminMembersComponent } from './_admin-components/admin-members/admin-m
 import { AdminMemberEditComponent } from './_admin-components/admin-members/admin-member-edit/admin-member-edit.component';
 import { AdminCategoriesComponent } from './_admin-components/admin-categories/admin-categories.component';
 import { AdminCategoryEditComponent } from './_admin-components/admin-categories/admin-category-edit/admin-category-edit.component';
+import { AdminArticlesComponent } from './_admin-components/admin-articles/admin-articles.component';
+import { AdminArticleEditComponent } from './_admin-components/admin-articles/admin-article-edit/admin-article-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -49,7 +51,8 @@ const routes: Routes = [
   { path: 'admin/member/:id', component: AdminMemberEditComponent, canActivate: [adminGuard]},
   { path: 'admin/categories', component: AdminCategoriesComponent, canActivate: [adminGuard]},
   { path: 'admin/category/:id', component: AdminCategoryEditComponent, canActivate: [adminGuard]},
-
+  { path: 'admin/articles', component: AdminArticlesComponent, canActivate: [adminGuard]},
+  { path: 'admin/article/:id', component: AdminArticleEditComponent, canActivate: [adminGuard]},
 
 ];
 
