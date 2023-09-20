@@ -47,7 +47,7 @@ const routes: Routes = [
   { path: 'shop-item', component: ShopItemComponent, canActivate: [authGuard] },
   { path: 'credit', component: CreditComponent, canActivate: [authGuard] },
   { path: 'status-code', component: StatusCodeComponent },
-  { path: 'admin', component: AdminComponent, canActivate: [adminGuard] },
+  { path: 'admin', component: AdminComponent, canActivate: [ adminGuard] },
   { path: 'admin/members', component: AdminMembersComponent, canActivate: [adminGuard]},
   { path: 'admin/member/:id', component: AdminMemberEditComponent, canActivate: [adminGuard]},
   { path: 'admin/categories', component: AdminCategoriesComponent, canActivate: [adminGuard]},
