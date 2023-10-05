@@ -19,14 +19,14 @@ import { NewsComponent } from './user-components/home/news/news.component';
 import { LogoutComponent } from './user-components/logout/logout.component';
 import { StatusCodeComponent } from './user-components/shop/status-code/status-code.component';
 import { adminGuard } from './guards/admin.guard';
-import { AdminComponent } from './_admin-components/admin/admin.component';
-import { AdminMembersComponent } from './_admin-components/admin-members/admin-members.component';
-import { AdminMemberEditComponent } from './_admin-components/admin-members/admin-member-edit/admin-member-edit.component';
-import { AdminCategoriesComponent } from './_admin-components/admin-categories/admin-categories.component';
-import { AdminCategoryEditComponent } from './_admin-components/admin-categories/admin-category-edit/admin-category-edit.component';
-import { AdminArticlesComponent } from './_admin-components/admin-articles/admin-articles.component';
-import { AdminArticleEditComponent } from './_admin-components/admin-articles/admin-article-edit/admin-article-edit.component';
-import { AdminImagesComponent } from './_admin-components/admin-images/admin-images.component';
+import { AdminComponent } from './admin-components/admin/admin.component';
+import { AdminMembersComponent } from './admin-components/admin-members/admin-members.component';
+import { AdminMemberEditComponent } from './admin-components/admin-members/admin-member-edit/admin-member-edit.component';
+import { AdminCategoriesComponent } from './admin-components/admin-categories/admin-categories.component';
+import { AdminCategoryEditComponent } from './admin-components/admin-categories/admin-category-edit/admin-category-edit.component';
+import { AdminArticlesComponent } from './admin-components/admin-articles/admin-articles.component';
+import { AdminArticleEditComponent } from './admin-components/admin-articles/admin-article-edit/admin-article-edit.component';
+import { AdminImagesComponent } from './admin-components/admin-images/admin-images.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
