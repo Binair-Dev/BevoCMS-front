@@ -1,4 +1,4 @@
-import { Rank } from './rank';
+import { Rank } from '../rank';
 
 export class UserForm {
   username: string = '';

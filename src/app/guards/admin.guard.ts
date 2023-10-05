@@ -2,7 +2,7 @@ import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { inject } from '@angular/core';
 import { TokenDecoderService } from '../_services/token-decoder.service';
-import { DecodedToken } from '../_models/decodedToken';
+import { DecodedToken } from '../_models/decoded-token';
 import { UserService } from '../_services/user.service';
 import { User } from '../_models/user';
 

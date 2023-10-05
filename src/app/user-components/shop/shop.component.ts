@@ -3,7 +3,7 @@ import { ShopService } from '../../_services/shop.service';
 import { ShopCategory } from '../../_models/shop-category';
 import { UserService } from '../../_services/user.service';
 import { User } from '../../_models/user';
-import { DecodedToken } from 'src/app/_models/decodedToken';
+import { DecodedToken } from 'src/app/_models/decoded-token';
 import { TokenDecoderService } from 'src/app/_services/token-decoder.service';
 
 @Component({

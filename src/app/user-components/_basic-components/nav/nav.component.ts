@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DecodedToken } from 'src/app/_models/decodedToken';
+import { DecodedToken } from 'src/app/_models/decoded-token';
 import { Information } from 'src/app/_models/information';
 import { AuthService } from 'src/app/_services/auth.service';
 import { StatsService } from 'src/app/_services/stats.service';

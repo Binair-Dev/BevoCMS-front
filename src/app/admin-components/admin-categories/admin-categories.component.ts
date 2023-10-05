@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ShopCategory } from 'src/app/_models/shop-category';
-import { ShopCategoryForm } from 'src/app/_models/shop-category-form';
+import { ShopCategoryForm } from 'src/app/_models/forms/shop-category-form';
 import { ShopService } from 'src/app/_services/shop.service';
 
 @Component({

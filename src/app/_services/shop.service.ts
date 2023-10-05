@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ShopCategoryForm } from '../_models/shop-category-form';
-import { ShopItemForm } from '../_models/shop-item-form';
+import { ShopCategoryForm } from '../_models/forms/shop-category-form';
+import { ShopItemForm } from '../_models/forms/shop-item-form';
 
 @Injectable({
   providedIn: 'root',

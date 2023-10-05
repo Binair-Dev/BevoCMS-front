@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Server } from 'src/app/_models/server';
 import { ShopCategory } from 'src/app/_models/shop-category';
 import { ShopItem } from 'src/app/_models/shop-item';
-import { ShopItemForm } from 'src/app/_models/shop-item-form';
+import { ShopItemForm } from 'src/app/_models/forms/shop-item-form';
 import { ServerService } from 'src/app/_services/server.service';
 import { ShopService } from 'src/app/_services/shop.service';
 

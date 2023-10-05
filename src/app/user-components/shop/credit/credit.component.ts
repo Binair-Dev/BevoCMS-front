@@ -6,7 +6,7 @@ import { ShopService } from 'src/app/_services/shop.service';
 import { Router } from '@angular/router';
 import { DedipassService } from 'src/app/_services/dedipass.service';
 import { TokenDecoderService } from 'src/app/_services/token-decoder.service';
-import { DecodedToken } from 'src/app/_models/decodedToken';
+import { DecodedToken } from 'src/app/_models/decoded-token';
 
 @Component({
   selector: 'app-credit',

@@ -38,6 +38,18 @@ import { AdminArticlesComponent } from './admin-components/admin-articles/admin-
 import { AdminArticleEditComponent } from './admin-components/admin-articles/admin-article-edit/admin-article-edit.component';
 import { AdminImagesComponent } from './admin-components/admin-images/admin-images.component';
 import { AdminNavComponent } from './admin-components/_basic-components/admin-nav/admin-nav.component';
+import { AdminNewsComponent } from './admin-components/admin-news/admin-news.component';
+import { AdminNewsEditComponent } from './admin-components/admin-news/admin-news-edit/admin-news-edit.component';
+import { AdminRankComponent } from './admin-components/admin-rank/admin-rank.component';
+import { AdminRankEditComponent } from './admin-components/admin-rank/admin-rank-edit/admin-rank-edit.component';
+import { AdminRulesComponent } from './admin-components/admin-rules/admin-rules.component';
+import { AdminRulesEditComponent } from './admin-components/admin-rules/admin-rules-edit/admin-rules-edit.component';
+import { AdminWikiComponent } from './admin-components/admin-wiki/admin-wiki.component';
+import { AdminWikiEditComponent } from './admin-components/admin-wiki/admin-wiki-edit/admin-wiki-edit.component';
+import { AdminServerComponent } from './admin-components/admin-server/admin-server.component';
+import { AdminServerEditComponent } from './admin-components/admin-server/admin-server-edit/admin-server-edit.component';
+import { AdminVoteRewardsComponent } from './admin-components/admin-vote-rewards/admin-vote-rewards.component';
+import { AdminVoteRewardsEditComponent } from './admin-components/admin-vote-rewards/admin-vote-rewards-edit/admin-vote-rewards-edit.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +86,18 @@ import { AdminNavComponent } from './admin-components/_basic-components/admin-na
     AdminArticlesComponent,
     AdminArticleEditComponent,
     AdminImagesComponent,
+    AdminNewsComponent,
+    AdminNewsEditComponent,
+    AdminRankComponent,
+    AdminRankEditComponent,
+    AdminRulesComponent,
+    AdminRulesEditComponent,
+    AdminWikiComponent,
+    AdminWikiEditComponent,
+    AdminServerComponent,
+    AdminServerEditComponent,
+    AdminVoteRewardsComponent,
+    AdminVoteRewardsEditComponent,
   ],
   imports: [
     BrowserModule,

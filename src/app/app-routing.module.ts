@@ -27,6 +27,18 @@ import { AdminCategoryEditComponent } from './admin-components/admin-categories/
 import { AdminArticlesComponent } from './admin-components/admin-articles/admin-articles.component';
 import { AdminArticleEditComponent } from './admin-components/admin-articles/admin-article-edit/admin-article-edit.component';
 import { AdminImagesComponent } from './admin-components/admin-images/admin-images.component';
+import { AdminNewsComponent } from './admin-components/admin-news/admin-news.component';
+import { AdminNewsEditComponent } from './admin-components/admin-news/admin-news-edit/admin-news-edit.component';
+import { AdminRankComponent } from './admin-components/admin-rank/admin-rank.component';
+import { AdminRankEditComponent } from './admin-components/admin-rank/admin-rank-edit/admin-rank-edit.component';
+import { AdminRulesComponent } from './admin-components/admin-rules/admin-rules.component';
+import { AdminRulesEditComponent } from './admin-components/admin-rules/admin-rules-edit/admin-rules-edit.component';
+import { AdminWikiComponent } from './admin-components/admin-wiki/admin-wiki.component';
+import { AdminWikiEditComponent } from './admin-components/admin-wiki/admin-wiki-edit/admin-wiki-edit.component';
+import { AdminServerComponent } from './admin-components/admin-server/admin-server.component';
+import { AdminServerEditComponent } from './admin-components/admin-server/admin-server-edit/admin-server-edit.component';
+import { AdminVoteRewardsComponent } from './admin-components/admin-vote-rewards/admin-vote-rewards.component';
+import { AdminVoteRewardsEditComponent } from './admin-components/admin-vote-rewards/admin-vote-rewards-edit/admin-vote-rewards-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -55,7 +67,20 @@ const routes: Routes = [
   { path: 'admin/articles', component: AdminArticlesComponent, canActivate: [adminGuard]},
   { path: 'admin/article/:id', component: AdminArticleEditComponent, canActivate: [adminGuard]},
   { path: 'admin/images', component: AdminImagesComponent, canActivate: [adminGuard]},
+  { path: 'admin/news', component: AdminNewsComponent, canActivate: [adminGuard]},
+  { path: 'admin/news/:id', component: AdminNewsEditComponent, canActivate: [adminGuard]},
+  { path: 'admin/ranks', component: AdminRankComponent, canActivate: [adminGuard]},
+  { path: 'admin/ranks/:id', component: AdminRankEditComponent, canActivate: [adminGuard]},
+  { path: 'admin/rules', component: AdminRulesComponent, canActivate: [adminGuard]},
+  { path: 'admin/rules/:id', component: AdminRulesEditComponent, canActivate: [adminGuard]},
+  { path: 'admin/wikis', component: AdminWikiComponent, canActivate: [adminGuard]},
+  { path: 'admin/wikis/:id', component: AdminWikiEditComponent, canActivate: [adminGuard]},
+  { path: 'admin/servers', component: AdminServerComponent, canActivate: [adminGuard]},
+  { path: 'admin/servers/:id', component: AdminServerEditComponent, canActivate: [adminGuard]},
+  { path: 'admin/vote-rewards', component: AdminVoteRewardsComponent, canActivate: [adminGuard]},
+  { path: 'admin/vote-rewards/:id', component: AdminVoteRewardsEditComponent, canActivate: [adminGuard]},
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

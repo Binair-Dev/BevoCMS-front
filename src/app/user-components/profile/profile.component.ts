@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../../_models/user';
 import { UserService } from '../../_services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DecodedToken } from 'src/app/_models/decodedToken';
+import { DecodedToken } from 'src/app/_models/decoded-token';
 import { JwtDecodeOptions } from 'jwt-decode';
 import { TokenDecoderService } from 'src/app/_services/token-decoder.service';
 
