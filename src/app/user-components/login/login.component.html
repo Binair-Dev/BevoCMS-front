@@ -33,6 +33,7 @@
               <ng-container *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched">
                 <span class="form-danger" *ngIf="loginForm.controls['password'].errors['minlength']">Le mot de passe doit contenir au moins {{loginForm.controls['password'].errors['minlength']['requiredLength']}} caractères !</span>
                 <span class="form-danger" *ngIf="loginForm.controls['password'].errors['maxlength']">Le mot de passe doit contenir au maximum {{loginForm.controls['password'].errors['maxlength']['requiredLength']}} caractères !</span>
+                <span class="form-danger" *ngIf="loginForm.controls['password'].errors['pattern']">Le mot de passe doit contenir au moins une lettre majuscule, un chiffre et un caractère spécial!</span>
               </ng-container>
               <input
                 class="style-imput"

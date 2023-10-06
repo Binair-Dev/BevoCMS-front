@@ -37,6 +37,9 @@ export class LoginComponent {
       password: [
         '',
         [
+          Validators.pattern(
+            '^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=!])(?!.*\\s).{8,}$'
+          ),
           Validators.minLength(8),
           Validators.maxLength(16),
           Validators.required,

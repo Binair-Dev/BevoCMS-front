@@ -80,6 +80,7 @@
       <ng-container *ngIf="passwordForm.controls['old_password'].errors && passwordForm.controls['old_password'].touched">
         <span class="form-danger" *ngIf="passwordForm.controls['old_password'].errors['minlength']">Le mot de passe doit contenir au moins {{passwordForm.controls['old_password'].errors['minlength']['requiredLength']}} caractères !</span>
         <span class="form-danger" *ngIf="passwordForm.controls['old_password'].errors['maxlength']">Le mot de passe doit contenir au maximum {{passwordForm.controls['old_password'].errors['maxlength']['requiredLength']}} caractères !</span>
+         <span class="form-danger" *ngIf="passwordForm.controls['old_password'].errors['pattern']">Le mot de passe doit contenir au moins une lettre majuscule, un chiffre et un caractère spécial!</span>
       </ng-container>
       <input
         class="style-imput"
@@ -92,6 +93,7 @@
       <ng-container *ngIf="passwordForm.controls['new_password'].errors && passwordForm.controls['new_password'].touched">
         <span class="form-danger" *ngIf="passwordForm.controls['new_password'].errors['minlength']">Le mot de passe doit contenir au moins {{passwordForm.controls['new_password'].errors['minlength']['requiredLength']}} caractères !</span>
         <span class="form-danger" *ngIf="passwordForm.controls['new_password'].errors['maxlength']">Le mot de passe doit contenir au maximum {{passwordForm.controls['new_password'].errors['maxlength']['requiredLength']}} caractères !</span>
+        <span class="form-danger" *ngIf="passwordForm.controls['new_password'].errors['pattern']">Le mot de passe doit contenir au moins une lettre majuscule, un chiffre et un caractère spécial!</span>
       </ng-container>
       <input
         class="style-imput"

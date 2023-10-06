@@ -45,7 +45,14 @@ export class AdminMemberEditComponent {
     this.userFormGroup = this.fb.group({
       username: ['', [Validators.minLength(3), Validators.maxLength(16)]],
       email: ['', [Validators.email]],
-      password: [],
+      password: [
+        Validators.pattern(
+          '^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=!])(?!.*\\s).{8,}$'
+        ),
+        Validators.minLength(8),
+        Validators.maxLength(16),
+        Validators.required,
+      ],
       credit: ['', [Validators.min(0)]],
       rank: [0, [Validators.min(0)]],
       confirmed: [true, [Validators.required]],

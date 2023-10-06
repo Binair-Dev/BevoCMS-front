@@ -37,6 +37,9 @@ export class ProfileComponent {
       old_password: [
         '',
         [
+          Validators.pattern(
+            '^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=!])(?!.*\\s).{8,}$'
+          ),
           Validators.minLength(8),
           Validators.maxLength(16),
           Validators.required,
@@ -45,6 +48,9 @@ export class ProfileComponent {
       new_password: [
         '',
         [
+          Validators.pattern(
+            '^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=!])(?!.*\\s).{8,}$'
+          ),
           Validators.minLength(8),
           Validators.maxLength(16),
           Validators.required,
