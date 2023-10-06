@@ -45,6 +45,7 @@
               <ng-container *ngIf="registerForm.controls['password'].errors && registerForm.controls['password'].touched">
                 <span class="form-danger" *ngIf="registerForm.controls['password'].errors['minlength']">Le mot de passe doit contenir au moins {{registerForm.controls['password'].errors['minlength']['requiredLength']}} caractères !</span>
                 <span class="form-danger" *ngIf="registerForm.controls['password'].errors['maxlength']">Le mot de passe doit contenir au maximum {{registerForm.controls['password'].errors['maxlength']['requiredLength']}} caractères !</span>
+                <span class="form-danger" *ngIf="registerForm.controls['password'].errors['pattern']">Le mot de passe doit contenir au moins une lettre majuscule, un chiffre et un caractère spécial!</span>
               </ng-container>
               <input
                 class="style-imput"
@@ -57,6 +58,7 @@
               <ng-container *ngIf="registerForm.controls['confirmPassword'].errors && registerForm.controls['confirmPassword'].touched">
                 <span class="form-danger" *ngIf="registerForm.controls['confirmPassword'].errors['minlength']">La confirmation du mot de passe doit contenir au moins {{registerForm.controls['confirmPassword'].errors['minlength']['requiredLength']}} caractères !</span>
                 <span class="form-danger" *ngIf="registerForm.controls['confirmPassword'].errors['maxlength']">La confirmation du mot de passe doit contenir au maximum {{registerForm.controls['confirmPassword'].errors['maxlength']['requiredLength']}} caractères !</span>
+                <span class="form-danger" *ngIf="registerForm.controls['confirmPassword'].errors['pattern']">Le mot de passe doit contenir au moins une lettre majuscule, un chiffre et un caractère spécial!</span>
               </ng-container>
               <ng-container *ngIf="registerForm.errors && registerForm.errors['passwordVerify'] && registerForm.controls['password'].touched">
                 <span class="form-danger">{{registerForm.errors['passwordVerify']}}</span>
@@ -78,7 +80,7 @@
                 <span></span>
                 </div>
             <div class="connexion-btn">
-              <button class="custom-button" type="submit" (click)="register()">Connexion</button>
+              <button class="custom-button" type="submit" (click)="register()">Inscription</button>
               <a href="#"><p>Déja inscrit ?</p></a>
             </div>
           </div>
