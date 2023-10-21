@@ -15,10 +15,11 @@ export class StatusCodeComponent {
   ) {}
 
   message: string = ""
+  code: string = ""
 
   ngOnInit() {
-    if(this.route.snapshot.queryParamMap.get('code') != null) {
-      let code = this.route.snapshot.queryParamMap.get('code');
+    this.route.paramMap.subscribe((params) => {
+      let code = params.get('code');
       this.shopService.addCredit(code as string).subscribe(
         (data) => {
           this.message = (data as ResponseMessage).message;
@@ -33,6 +34,6 @@ export class StatusCodeComponent {
           }, 1500)
         }
       );
-    }
+    });
   }
 }
